@@ -1,0 +1,18 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Artists{% endblock %}
+{% block content %}
+<ul class="items">
+	{% for artist in artists %}
+	<li>
+		<a href="/artists/{{ artist.id }}">
+			<div class="item image-thumbnail-container">
+				<img src="{{ artist.image_link }}" alt="{{ artist.name }} image" class="image-thumbnail"/>
+				<div>
+					<h4>{{ artist.name }}</h4>
+				</div>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
